@@ -1,11 +1,13 @@
 import React from "react";
 import { useSelector } from "react-redux";
 const Card = (props) => {
-  let { fullName } = useSelector((state) => state.useReducer);
+  let { fullName, emailAddress, isDark } = useSelector(
+    (state) => state.useReducer
+  );
   return (
     <div>
-      <h1 style={{ color: props.isDark ? "white" : "black" }}>
-        Card Component {fullName}
+      <h1 style={{ color: isDark ? "white" : "black" }}>
+        Card Component {fullName} {emailAddress}
       </h1>
     </div>
   );
